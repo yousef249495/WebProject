@@ -21,7 +21,7 @@ body {
 header {
     position: relative;
     width: 100%;
-    background-image: url(/imgs/cars.jpg);
+    background-image: url(../imgs/cars.jpg);
     background-size: cover;
     padding: 20px;
 }
