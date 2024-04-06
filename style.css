@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+html {
+    --main-cl: #064789;
+    --second-cl: #427AA1;
+    --third-cl: #EbF2Fa;
+}
+
+body {
+    background-color: var(--second-cl);
+}
+
+/* Header Start */
+
+header {
+    position: relative;
+    width: 100%;
+    background-image: url(../imgs/cars.jpg);
+    background-size: cover;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-bottom: 10px solid black;
+}
+
+
+header .logo {
+    display: inline-block;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+header .logo img {
+    width: 100%;
+}
+
+header .mainTitle {
+    display: inline-block;
+    width: calc(100% - (100px + 40px));
+    height: 100px;
+    position: relative;
+}
+
+header .mainTitle h1 {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    color: var(--third-cl);
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* Header End */
+/* Nav Start  */
+
+nav {
+    width: 15%;
+    padding-block: 25px;
+    line-height: 3;
+    float: left;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--third-cl);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Nav End  */
+/* Landing of Main Page Start  */
+
+.landing {
+    height: calc(100vh - (144px + 50px));
+    position: relative;
+    overflow: hidden;
+}
+
+.landing .image {
+    position: relative;
+    height: 100%;
+    z-index: -1;
+}
+
+.landing .image img {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.landing div:not(.image) {
+    position: absolute;
+    z-index: 1;
+    border: 1px solid black;
+    background-color: var(--third-cl);
+    opacity: 0.3;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+
+.landing div a {
+    position: relative;
+    left: 30px;
+    bottom: -200px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--main-cl);
+}
+
+.landing .link_1 {
+    top: -150px;
+    left: -150px;
+}
+
+.landing .link_1 a {
+    left: 180px;
+    bottom: -200px;
+}
+
+.landing .link_2 {
+    top: -150px;
+    right: -150px;
+}
+
+.landing .link_2 a {
+    left: 30px;
+    bottom: -200px;
+}
+
+.landing .link_3 {
+    right: -150px;
+    bottom: -150px;
+}
+
+.landing .link_3 a {
+    left: 20px;
+    bottom: -80px;
+}
+
+.landing .link_4 {
+    left: -150px;
+    bottom: -150px;
+}
+
+.landing .link_4 a {
+    top: 80px;
+    left: 165px;
+}
+
+.landing div:hover {
+    opacity: 1;
+}
+
+/* Landing of Main Page End  */
+/* Content of Car Brands Start  */
+.brands {
+    width: 85%;
+    height: calc(100vh - (144px + 50px));
+    margin-left: 15%;
+    background-color: var(--third-cl);
+}
+
+.brands div {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 39%;
+    height: 40%;
+    padding: 50px;
+    margin-inline: calc(20% / 4);
+    margin-block: 30px;
+    text-align: center;
+}
+
+.brands div a {
+    text-decoration: none;
+}
+
+.brands div a img {
+    height: 90%;
+}
+
+.brands div a label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-cl);
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* Content of Car Brands End  */
+/* Content of About Us Start  */
+
+body .content {
+    position: relative;
+    width: 85%;
+    height: calc(100vh - (144px + 50px));
+    padding: 50px;
+    margin-left: 15%;
+    background-color: var(--third-cl);
+    text-transform: none;
+}
+
+body .content p {
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+body .content p span {
+    color: var(--main-cl);
+    font-weight: bold;
+}
+
+body .content .contactLink {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+body .content .contactLink span a {
+    color: var(--main-cl);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Content of About Us End  */
+
+/* Footer Start  */
+footer {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: var(--main-cl);
+}
+
+footer p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--third-cl);
+    letter-spacing: 2px;
+}
+
+/* Footer End  */
