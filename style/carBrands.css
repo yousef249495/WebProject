@@ -21,17 +21,13 @@ body {
 header {
     position: relative;
     width: 100%;
-}
-
-header .content {
-    overflow: hidden;
-    background-color: var(--main-cl);
-    color: var(--third-cl);
-    width: 100%;
+    background-image: url(/imgs/cars.jpg);
+    background-size: cover;
     padding: 20px;
 }
 
-header .content .logo {
+
+header .logo {
     display: inline-block;
     overflow: hidden;
     width: 100px;
@@ -39,60 +35,38 @@ header .content .logo {
     border-radius: 50%;
 }
 
-header .content .logo img {
+header .logo img {
     width: 100%;
 }
 
-header .content .mainTitle {
+header .mainTitle {
     display: inline-block;
     width: calc(100% - (100px + 40px));
     height: 100px;
     position: relative;
 }
 
-header .content .mainTitle h1 {
+header .mainTitle h1 {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    right: 0;
+    transform: translate(0, -50%);
+    color: var(--third-cl);
     text-align: center;
     font-size: 50px;
     letter-spacing: 5px;
     text-transform: uppercase;
 }
 
-header .pageTitle {
-    display: inline-block;
-    font-size: 40px;
-    color: var(--main-cl);
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: center;
-}
-
-header .pageTitle h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /* Header End */
 /* Nav Start  */
+
 nav {
-    min-height: 100vh;
-    width: 20%;
+    width: 15%;
     padding-block: 50px;
     line-height: 3;
-    background-color: var(--second-cl);
     float: left;
 }
-
-nav ul {}
 
 nav ul li {
     text-align: center;
@@ -108,41 +82,57 @@ nav ul li a {
 /* Nav End  */
 /* Content Start  */
 .brands {
-    width: 80%;
-    margin-left: 20%;
+    width: 85%;
+    height: calc(100vh - (144px + 50px));
+    margin-left: 15%;
     background-color: var(--third-cl);
 }
 
 .brands div {
     position: relative;
     display: inline-block;
-    text-align: center;
     overflow: hidden;
     width: 39%;
+    height: 40%;
     padding: 50px;
-    margin: calc(20% / 4);
+    margin-inline: calc(20% / 4);
+    margin-block: 30px;
+    text-align: center;
 }
 
 .brands div a {
     text-decoration: none;
-    width: 100%;
 }
 
 .brands div a img {
-    width: 100%;
+    height: 90%;
 }
 
 .brands div a label {
     display: block;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--main-cl);
-    margin-top: 20px;
+    margin-top: 15px;
     cursor: pointer;
 }
 
 /* Content End  */
-.clear {
-    clear: both;
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: var(--main-cl);
+}
+
+footer p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--third-cl);
+    letter-spacing: 2px;
 }
