@@ -11,6 +11,7 @@ html {
     --main-cl: #064789;
     --second-cl: #427AA1;
     --third-cl: #EbF2Fa;
+    --transition-time: 0.3s;
 }
 
 body {
@@ -22,11 +23,7 @@ body {
 header {
     position: relative;
     width: 100%;
-<<<<<<< HEAD
-    background-image: url(/imgs/cars.jpg);
-=======
     background-image: url(imgs/cars.jpg);
->>>>>>> cf6654f (تم إنشاء الله)
     background-size: cover;
     padding: 20px;
     padding-bottom: 10px;
@@ -87,13 +84,18 @@ nav ul li a {
     color: var(--third-cl);
     font-size: 20px;
     font-weight: 700;
+    transition: var(--transition-time);
+}
+
+nav ul li a:hover {
+    color: black;
 }
 
 /* Nav End  */
 /* Landing of Main Page Start  */
 
 .landing {
-    height: calc(100vh - (144px + 50px));
+    height: calc(100vh - (144px + 30px));
     position: relative;
     overflow: hidden;
 }
@@ -122,8 +124,13 @@ nav ul li a {
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    transition: var(--transition-time);
 }
 
+.landing div:not(.image):hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
 
 .landing div a {
     position: relative;
@@ -176,16 +183,13 @@ nav ul li a {
     left: 165px;
 }
 
-.landing div:hover {
-    opacity: 1;
-}
-
 /* Landing of Main Page End  */
 /* Content of Car Brands Start  */
 .brands {
     width: 85%;
-    height: calc(100vh - (144px + 50px));
+    height: calc(100vh - (144px + 30px));
     margin-left: 15%;
+    padding: 10px;
     background-color: var(--third-cl);
 }
 
@@ -193,12 +197,17 @@ nav ul li a {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: 39%;
-    height: 40%;
-    padding: 50px;
+    width: calc(39% - 20px);
+    height: calc(40% - 20px);
+    padding: 25px;
     margin-inline: calc(20% / 4);
     margin-block: 30px;
     text-align: center;
+    transition: var(--transition-time);
+}
+
+.brands div:hover {
+    transform: scale(1.5);
 }
 
 .brands div a {
@@ -245,6 +254,11 @@ nav ul li a {
     display: inline-block;
     width: 20% !important;
     margin: 2.3%;
+    transition: var(--transition-time);
+}
+
+.imagesSection div img:hover {
+    transform: scale(1.2);
 }
 
 /* Images Section End */
@@ -253,7 +267,7 @@ nav ul li a {
 body .content {
     position: relative;
     width: 85%;
-    height: calc(100vh - (144px + 50px));
+    height: calc(100vh - (144px + 30px));
     padding: 50px;
     margin-left: 15%;
     background-color: var(--third-cl);
@@ -292,7 +306,7 @@ body .content .contactLink span a {
 footer {
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 30px;
     text-align: center;
     background-color: var(--main-cl);
 }
