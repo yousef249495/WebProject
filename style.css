@@ -11,11 +11,12 @@ html {
     --main-cl: #064789;
     --second-cl: #427AA1;
     --third-cl: #EbF2Fa;
+    --height: calc(100vh - (144px + 20px));
     --transition-time: 0.3s;
 }
 
 body {
-    background-color: var(--second-cl);
+    background-color: black;
 }
 
 /* Header Start */
@@ -23,8 +24,7 @@ body {
 header {
     position: relative;
     width: 100%;
-    background-image: url(imgs/cars.jpg);
-    background-size: cover;
+    background-color: black;
     padding: 20px;
     padding-bottom: 10px;
     border-bottom: 10px solid black;
@@ -88,106 +88,177 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: black;
+    color: var(--main-cl);
 }
 
 /* Nav End  */
 /* Landing of Main Page Start  */
 
 .landing {
-    height: calc(100vh - (144px + 30px));
+    height: calc(100vh - (144px + 20px + 25px));
     position: relative;
     overflow: hidden;
-}
-
-.landing .image {
-    position: relative;
-    height: 100%;
-    z-index: -1;
-}
-
-.landing .image img {
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-}
-
-.landing div:not(.image) {
-    position: absolute;
-    z-index: 1;
-    border: 1px solid black;
     background-color: black;
-    opacity: 0.3;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    transition: var(--transition-time);
 }
 
-.landing div:not(.image):hover {
-    opacity: 1;
-    transform: scale(1.5);
-}
-
-.landing div a {
+.landing figure {
     position: relative;
-    left: 30px;
-    bottom: -200px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 17px;
-    font-weight: bold;
-    color: var(--third-cl);
+    width: 500vw;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    left: 0;
+    animation: slider 30s ease-in-out infinite;
+    -webkit-animation: slider 30s ease-in-out infinite;
 }
 
-.landing .link_1 {
-    top: -150px;
-    left: -150px;
+.landing figure div {
+    display: inline-block;
+    width: calc(100vw - 4px);
+    height: 100%;
 }
 
-.landing .link_1 a {
-    left: 180px;
-    bottom: -200px;
+.landing figure .image1 {
+    background-image: url(imgs/landing.jpg);
+    background-size: cover;
 }
 
-.landing .link_2 {
-    top: -150px;
-    right: -150px;
+.landing figure .image2 {
+    background-image: url(imgs/landing2.jpg);
+    background-size: cover;
 }
 
-.landing .link_2 a {
-    left: 30px;
-    bottom: -200px;
+.landing figure .image3 {
+    background-image: url(imgs/landing3.jpg);
+    background-size: cover;
 }
 
-.landing .link_3 {
-    right: -150px;
-    bottom: -150px;
+.landing figure .image4 {
+    background-image: url(imgs/landing4.jpg);
+    background-size: cover;
 }
 
-.landing .link_3 a {
-    left: 20px;
-    bottom: -80px;
+.landing figure .image5 {
+    background-image: url(imgs/landing5.jpg);
+    background-size: cover;
 }
 
-.landing .link_4 {
-    left: -150px;
-    bottom: -150px;
-}
+@keyframes slider {
+    0% {
+        left: 0;
+    }
 
-.landing .link_4 a {
-    top: 80px;
-    left: 165px;
+    10% {
+        left: 0;
+    }
+
+
+    15% {
+        left: -100%;
+    }
+
+    20% {
+        left: -100%;
+    }
+
+    25% {
+        left: -200%;
+    }
+
+    30% {
+        left: -200%;
+    }
+
+    35% {
+        left: -300%;
+    }
+
+    40% {
+        left: -300%;
+    }
+
+    45% {
+        left: -400%;
+    }
+
+    50% {
+        left: -400%;
+    }
+
+    55% {
+        left: -400%;
+    }
+
+    60% {
+        left: -400%;
+    }
+
+    65% {
+        left: -300%;
+    }
+
+    70% {
+        left: -300%;
+    }
+
+    75% {
+        left: -200%;
+    }
+
+    80% {
+        left: -200%;
+    }
+
+    85% {
+        left: -100%;
+    }
+
+    90% {
+        left: -100%;
+    }
+
+    95% {
+        left: 0;
+    }
+
+    100% {
+        left: 0;
+    }
 }
 
 /* Landing of Main Page End  */
+/* links of Main Page Start */
+#homeLinks {
+    width: calc(100vw - 200px);
+    height: fit-content;
+    margin-inline: 100px;
+}
+
+#homeLinks ul li {
+    list-style: none;
+    display: inline-block;
+    width: calc((100% - (8 * 20px)) / 4);
+    margin: 0 18px;
+    font-size: 20px;
+}
+
+#homeLinks ul li a {
+    text-decoration: none;
+}
+
+#homeLinks ul li a p {
+    width: 100%;
+    text-align: center;
+    padding: 1.5px;
+    color: var(--third-cl);
+}
+
+/* links of Main Page End */
 /* Content of Car Brands Start  */
+
 .brands {
     width: 85%;
-    height: calc(100vh - (144px + 30px));
+    height: var(--height);
     margin-left: 15%;
     padding: 10px;
     background-color: var(--third-cl);
@@ -229,45 +300,71 @@ nav ul li a:hover {
 }
 
 /* Content of Car Brands End  */
-/* Images Section Start */
-.imagesSection {
-    background-color: var(--third-cl);
-    width: 85%;
-    margin-left: 15%;
+/* Content of bmw Start */
+
+.bmwContent {
+    height: var(--height);
+    padding: 50px;
+    overflow: hidden;
+    background-image: url(imgs/bmwBackground.jpg);
+    background-size: cover;
 }
 
-.imagesSection div {
-    width: 100%;
-    padding: 5px;
+.bmwContent p {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--third-cl);
+    background-color: rgba(0, 0, 0, 0.5);
+    min-width: auto;
+    text-align: center;
+    width: calc(100% / 3);
+    height: fit-content;
+    padding-block: 50px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    float: left;
 }
 
-.imagesSection div .carModelName {
-    display: block;
-    margin-top: 15px;
-    margin-left: 15px;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--main-cl);
-}
-
-.imagesSection div img {
+.bmwContent #middle {
     display: inline-block;
-    width: 20% !important;
-    margin: 2.3%;
-    transition: var(--transition-time);
+    width: calc(100% / 3);
 }
 
-.imagesSection div img:hover {
-    transform: scale(1.2);
+.bmwContent .carModels {
+    display: inline-block;
+    width: calc(100% / 3);
+    align-items: center;
+    float: right;
 }
 
-/* Images Section End */
+.bmwContent a:nth-child(1) img {
+    width: calc((100vw / 3) - 60%);
+    margin-inline: 30%;
+}
+
+.bmwContent a:nth-child(2) p {
+    display: block;
+    line-height: initial;
+    font-style: initial;
+    line-height: initial;
+    color: var(--third-cl);
+    background-color: transparent;
+    width: calc((100vw / 3) - 60%);
+    margin-inline: 30%;
+    margin-block: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* Content of bmw End */
 /* Content of About Us Start  */
 
 body .content {
     position: relative;
     width: 85%;
-    height: calc(100vh - (144px + 30px));
+    height: var(--height);
     padding: 50px;
     margin-left: 15%;
     background-color: var(--third-cl);
@@ -278,6 +375,7 @@ body .content p {
     font-size: 25px;
     line-height: 1.6;
     margin-bottom: 50px;
+    text-transform: none;
 }
 
 body .content p span {
@@ -306,9 +404,9 @@ body .content .contactLink span a {
 footer {
     position: relative;
     width: 100%;
-    height: 30px;
+    height: 20px;
     text-align: center;
-    background-color: var(--main-cl);
+    background-color: black;
 }
 
 footer p {
@@ -316,7 +414,7 @@ footer p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--third-cl);
+    color: var(--third-cl) !important;
     letter-spacing: 2px;
 }
 
