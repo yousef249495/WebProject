@@ -2,40 +2,48 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    text-transform: capitalize;
     box-sizing: border-box;
     z-index: 2;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
     --main-cl: #064789;
     --second-cl: #427AA1;
     --third-cl: #EbF2Fa;
-    --height: calc(100vh - (144px + 20px));
+    --height: calc(100vh - (74px + 20px));
     --transition-time: 0.3s;
 }
 
 body {
-    background-color: black;
+    background-color: #0f0f0f;
+}
+
+input[type="submit"],
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #aeaeae;
 }
 
 /* Header Start */
 
 header {
     position: relative;
+    z-index: 999;
     width: 100%;
-    background-color: black;
-    padding: 20px;
-    padding-bottom: 10px;
-    border-bottom: 10px solid black;
+    background-color: #0f0f0f;
+    padding: 5px 15px;
 }
 
 
 header .logo {
     display: inline-block;
     overflow: hidden;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
@@ -45,24 +53,51 @@ header .logo img {
 
 header .mainTitle {
     display: inline-block;
-    width: calc(100% - (100px + 40px));
-    height: 100px;
+    width: calc(100% - (60px + 40px));
+    height: 60px;
     position: relative;
 }
 
 header .mainTitle h1 {
     position: absolute;
     top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: var(--third-cl);
     text-align: center;
     font-size: 50px;
     letter-spacing: 5px;
     text-transform: uppercase;
-    background-color: #000000b3;
     padding: 5px;
     border-radius: 10px;
+}
+
+header #menu {
+    position: absolute;
+    top: 37px;
+    right: 40px;
+    transform: translateY(-50%);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #0f0f0f;
+    cursor: pointer;
+    transition: var(--transition-time);
+    overflow: hidden;
+}
+
+header #menu:hover {
+    background-color: #333;
+}
+
+header #menu img {
+    float: left;
+}
+
+header #menu p {
+    float: right;
+    margin-block: 3px;
+    color: white;
+    text-transform: capitalize;
 }
 
 /* Header End */
@@ -85,6 +120,7 @@ nav ul li a {
     font-size: 20px;
     font-weight: 700;
     transition: var(--transition-time);
+    text-transform: capitalize;
 }
 
 nav ul li a:hover {
@@ -92,13 +128,60 @@ nav ul li a:hover {
 }
 
 /* Nav End  */
+/* links of Main Page Start */
+
+.homeLinks {
+    position: absolute;
+    top: 40px;
+    z-index: 3;
+    width: calc(100vw - 200px);
+    height: fit-content;
+    margin-inline: 100px;
+    border-radius: 15px;
+    background-color: #0f0f0f;
+    transition: top .5s ease-in-out;
+}
+
+.homeLinks.active {
+    top: 80px;
+}
+
+.homeLinks ul li {
+    list-style: none;
+    display: inline-block;
+    width: calc((100% - (8 * 20px)) / 4);
+    margin: 0 18px;
+    font-size: 20px;
+}
+
+.homeLinks ul li a {
+    text-decoration: none;
+}
+
+.homeLinks ul li a p {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 1.5px;
+    border-radius: 15px;
+    color: var(--third-cl);
+    transition: var(--transition-time);
+}
+
+.homeLinks ul li a:hover p {
+    color: var(--main-cl);
+    background-color: white;
+}
+
+/* links of Main Page End */
 /* Landing of Main Page Start  */
 
 .landing {
-    height: calc(100vh - (144px + 20px + 25px));
+    height: calc(100vh - (70px + 25px));
     position: relative;
     overflow: hidden;
-    background-color: black;
+    background-color: #0f0f0f;
 }
 
 .landing figure {
@@ -119,27 +202,27 @@ nav ul li a:hover {
 }
 
 .landing figure .image1 {
-    background-image: url(imgs/landing.jpg);
+    background-image: url(imgs/landing1copy.jpg);
     background-size: cover;
 }
 
 .landing figure .image2 {
-    background-image: url(imgs/landing2.jpg);
+    background-image: url(imgs/landing2copy.jpg);
     background-size: cover;
 }
 
 .landing figure .image3 {
-    background-image: url(imgs/landing3.jpg);
+    background-image: url(imgs/landing3copy.jpg);
     background-size: cover;
 }
 
 .landing figure .image4 {
-    background-image: url(imgs/landing4.jpg);
+    background-image: url(imgs/landing4copy.jpg);
     background-size: cover;
 }
 
 .landing figure .image5 {
-    background-image: url(imgs/landing5.jpg);
+    background-image: url(imgs/landing5copy.jpg);
     background-size: cover;
 }
 
@@ -227,33 +310,167 @@ nav ul li a:hover {
 }
 
 /* Landing of Main Page End  */
-/* links of Main Page Start */
-#homeLinks {
-    width: calc(100vw - 200px);
-    height: fit-content;
-    margin-inline: 100px;
+/* Login Page Start  */
+.loginPage {
+    position: relative;
+    height: var(--height);
+    overflow: hidden;
 }
 
-#homeLinks ul li {
-    list-style: none;
-    display: inline-block;
-    width: calc((100% - (8 * 20px)) / 4);
-    margin: 0 18px;
-    font-size: 20px;
+.loginPage h2 {
+    z-index: 5;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: white;
+    letter-spacing: 1px;
+    font-size: 40px;
 }
 
-#homeLinks ul li a {
+.loginPage .background {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+
+#loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    padding-block: 40px;
+    border: 2px solid rgb(255 255 255 / .2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    z-index: 4;
+}
+
+#loginForm .inputBox input {
+    width: 90%;
+    height: 40px;
+    margin: 20px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#loginForm .reForgot {
+    width: 400px;
+    padding-inline: 15px;
+    margin-block: 30px;
+    overflow: hidden;
+    font-size: 17px;
+    color: white;
+    text-transform: none;
+}
+
+#loginForm .reForgot label {
+    float: left;
+    text-transform: none;
+}
+
+#loginForm .reForgot a {
+    float: right;
+    color: white;
+    text-transform: none;
     text-decoration: none;
 }
 
-#homeLinks ul li a p {
-    width: 100%;
-    text-align: center;
-    padding: 1.5px;
-    color: var(--third-cl);
+#loginForm #lbtn {
+    width: 60%;
+    height: 40px;
+    margin-inline: 80px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
 }
 
-/* links of Main Page End */
+#loginForm #lerror {
+    width: 300px;
+    margin: 0 5px;
+    color: red;
+    font-size: 14px;
+    text-transform: none;
+    position: absolute;
+    top: 185px;
+    left: 25px;
+}
+
+#signForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    padding-block: 40px;
+    border: 2px solid rgb(255 255 255 / .2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    z-index: 4;
+}
+
+#signForm .inputBox input {
+    width: 90%;
+    height: 40px;
+    margin: 20px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#signForm #sbtn {
+    width: 60%;
+    height: 40px;
+    margin-inline: 80px;
+    margin-top: 35px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+#signForm #serror {
+    width: 300px;
+    margin: 0 5px;
+    color: red;
+    font-size: 14px;
+    text-transform: none;
+    position: absolute;
+    top: 265px;
+    left: 25px;
+}
+
+form.dis {
+    display: none;
+}
+
+#switch {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: -180px;
+    margin-left: 135px;
+}
+
+/* Login Page End  */
 /* Content of Car Brands Start  */
 
 .brands {
@@ -278,7 +495,7 @@ nav ul li a:hover {
 }
 
 .brands div:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 .brands div a {
@@ -289,7 +506,7 @@ nav ul li a:hover {
     height: 90%;
 }
 
-.brands div a label {
+.brands div a p {
     display: block;
     text-transform: uppercase;
     font-size: 20px;
@@ -302,15 +519,29 @@ nav ul li a:hover {
 /* Content of Car Brands End  */
 /* Content of bmw Start */
 
-.bmwContent {
+.brandContent {
     height: var(--height);
     padding: 50px;
     overflow: hidden;
+}
+
+.bmwBackground {
     background-image: url(imgs/bmwBackground.jpg);
     background-size: cover;
 }
 
-.bmwContent p {
+.mercedesBackground {
+    background-image: url(imgs/mercedesBackground.jpg);
+    background-size: cover;
+}
+
+.toyotaBackground {
+    background-image: url(imgs/toyotaBackground.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.brandContent .dis {
     font-size: 18px;
     font-style: italic;
     line-height: 1.8;
@@ -326,24 +557,248 @@ nav ul li a:hover {
     float: left;
 }
 
-.bmwContent #middle {
+#middle {
     display: inline-block;
     width: calc(100% / 3);
 }
 
-.bmwContent .carModels {
+.brandContent .carModels {
+    display: inline-block;
+    width: calc(100% / 3);
+    align-items: center;
+    float: right;
+    text-transform: capitalize;
+}
+
+.brandContent .carModels p {
+    font-size: 20px;
+}
+
+.brandContent a {
+    text-decoration: none;
+}
+
+.brandContent a:nth-child(1) img {
+    width: calc((100vw / 3) - 60%);
+    margin-inline: 30%;
+}
+
+.brandContent a:nth-child(2) p {
+    display: block;
+    line-height: initial;
+    font-style: initial;
+    line-height: initial;
+    color: var(--third-cl);
+    background-color: transparent;
+    width: calc((100vw / 3) - 60%);
+    margin-inline: 30%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#knowMore {
+    text-decoration: none;
+}
+
+#knowMore p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+    color: red;
+    text-decoration: underline;
+}
+
+#knowMore p:hover {
+    color: white;
+}
+
+/* Content of bmw End */
+/* Bmw models content Start  */
+.modelsContent {
+    text-transform: none;
+    background-color: white;
+}
+
+.modelsContent .modelsSearch {
+    position: absolute;
+    z-index: 5;
+    top: 80px;
+    left: 40%;
+    transform: translate(-40%);
+    width: calc(100vw - 200px);
+    height: fit-content;
+    border-radius: 25px;
+    background-color: #0f0f0f;
+    box-shadow: 5px 5px 10px;
+    overflow: hidden;
+}
+
+.modelsContent .modelsSearch #searchInput {
+    float: left;
+    margin-left: 5%;
+    width: 300px;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    margin-block: 10px;
+    outline: none;
+    text-transform: none;
+    text-align: center;
+}
+
+.modelsContent .modelsSearch #searchButton {
+    float: left;
+    width: 100px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 5px;
+    margin-block: 10px;
+    margin-left: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#tableButton {
+    float: right;
+    margin-right: 5%;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 15px;
+    margin-block: 10px;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.modelsContent .modelsSearch .filter {
+    float: right;
+    margin-right: 20px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 15px;
+    margin-block: 10px;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.modelsContent .modelsSlides {
+    min-height: 90vh;
+    padding-top: 65px;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+
+.modelsContent .modelsSlides div {
+    width: 90%;
+    padding: 10px;
+    margin-inline: 5%;
+    margin-block: 16px;
+}
+
+.modelsContent .modelsSlides>div {
+    border: 1px solid #e7e7e7;
+    box-shadow: 0px 0px 5px 0.1px #bdbdbd;
+    border-radius: 20px;
+    height: 250px;
+    padding: 20px;
+    background-color: #ededed;
+    box-shadow: 5px 5px 10px;
+    overflow: hidden;
+}
+
+.modelsContent .modelsSlides div img {
+    height: 100%;
+    border-radius: 20px;
+    float: right;
+}
+
+.modelsContent .modelsSlides div .des {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.modelsContent .modelsSlides div .des p:first-child {
+    text-transform: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modelsContent .modelsSlides div .des p:last-child {
+    text-transform: none;
+    font-size: 20px;
+}
+
+/* Bmw models content End  */
+/* <Audi> */
+
+#AudiCompany {
+    font-size: 27px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #108ece;
+
+
+}
+
+#AudiContent {
+    height: var(--height);
+    padding: 50px;
+    overflow: auto;
+    background-image: url(imgs/landing1copy.jpg);
+    background-size: cover;
+
+
+}
+
+#AudiContent .dis {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--third-cl);
+    background-color: rgba(0, 0, 0, 0.5);
+    min-width: auto;
+    text-align: center;
+    width: calc(100% / 3);
+    height: fit-content;
+    padding-block: 50px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    float: left;
+}
+
+#AudiContent #middle {
+    display: inline-block;
+    width: calc(100% / 3);
+}
+
+#AudiContent .carModels {
     display: inline-block;
     width: calc(100% / 3);
     align-items: center;
     float: right;
 }
 
-.bmwContent a:nth-child(1) img {
+#AudiContent .carModels p {
+    font-size: 20px;
+}
+
+#AudiContent #knowMore p {
+    font-size: 30px;
+}
+
+#AudiContent a {
+    text-decoration: none;
+}
+
+#AudiContent a:nth-child(1) img {
     width: calc((100vw / 3) - 60%);
     margin-inline: 30%;
 }
 
-.bmwContent a:nth-child(2) p {
+#AudiContent a:nth-child(2) p {
     display: block;
     line-height: initial;
     font-style: initial;
@@ -357,8 +812,135 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
+/* </Audi> */
+/* <Audi Models> */
 
-/* Content of bmw End */
+.AudiModelsContent {
+    text-transform: none;
+    background-color: white;
+
+}
+
+.AudiModelsContent .AudiSearch {
+    position: absolute;
+    z-index: 5;
+    top: 80px;
+    left: 40%;
+    transform: translate(-40%);
+    width: calc(100vw - 200px);
+    height: fit-content;
+    border-radius: 25px;
+    background-color: #0f0f0f;
+    box-shadow: 5px 5px 10px;
+    overflow: hidden;
+}
+
+.AudiModelsContent .AudiSearch input {
+    float: left;
+    margin-left: 5%;
+    width: 300px;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    margin-block: 10px;
+    outline: none;
+    text-transform: none;
+    text-align: center;
+}
+
+.AudiModelsContent .AudiSearch #searchButton {
+    float: left;
+    width: 100px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 5px;
+    margin-block: 10px;
+    margin-left: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.AudiModelsContent .AudiSearch .filter {
+    float: right;
+    margin-right: 20px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 15px;
+    margin-block: 10px;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.AudiModelsContent .AudiSlides {
+    min-height: 90vh;
+    padding-top: 64px;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+
+.AudiModelsContent .AudiSlides div {
+    width: 90%;
+    height: calc(25% - 10px);
+    padding: 10px;
+    margin-inline: 5%;
+    margin-block: 8px;
+
+}
+
+.AudiModelsContent .AudiSlides>div {
+    border: 1px solid #e7e7e7;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #ededed;
+    float: right;
+    box-shadow: 5px 5px 10px;
+}
+
+.AudiModelsContent .AudiSlides div img {
+    display: block;
+    width: 300px;
+    height: 220px;
+    border-radius: 20px;
+    float: right;
+    min-width: auto;
+}
+
+.AudiModelsContent .AudiSlides div .des {
+    width: 50%;
+    height: 100%;
+    float: left;
+    overflow: auto;
+}
+
+.AudiModelsContent .AudiSlides div .des p:first-child {
+    text-transform: none;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.AudiModelsContent .AudiSlides div .des p:last-child {
+    text-transform: none;
+    font-size: 20px;
+
+}
+
+.AudiModelsContent .AudiSlides div .des p:last-child .tec {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.AudiModelsContent .AudiSlides div .des p:last-child .Price {
+    color: #427AA1;
+    color: #427AA1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* <Audi Models> */
 /* Content of About Us Start  */
 
 body .content {
@@ -383,7 +965,7 @@ body .content p span {
     font-weight: bold;
 }
 
-body .content .contactLink {
+body .content .contactLinks p {
     position: absolute;
     bottom: 5%;
     left: 50%;
@@ -391,22 +973,128 @@ body .content .contactLink {
     font-size: 20px;
 }
 
-body .content .contactLink span a {
+body .content .contactLinks p span a {
     color: var(--main-cl);
     font-style: italic;
     font-weight: bold;
     font-size: 20px;
 }
 
-/* Content of About Us End  */
 
+body .content .contactLinks .mail {
+    margin-bottom: 0;
+}
+
+
+/* Content of About Us End  */
+/* Content of Contact Us page Start  */
+.container {
+    min-height: var(--height);
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("imgs/bg.png") no-repeat center center/cover;
+}
+
+.container form {
+    width: 670px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.container form h1 {
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container form input {
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #fff;
+}
+
+.container form input::placeholder {
+    color: #ddd;
+}
+
+.container form #lastName,
+.container form #mobile {
+    margin-left: 20px;
+}
+
+.container form h4 {
+    color: #fff;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.container form textarea {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: rgba(194, 194, 194, 0.713);
+}
+
+.container form #button {
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.container form #button:hover {
+    opacity: 0.7;
+}
+
+/* Content of Contact Us page End */
 /* Footer Start  */
 footer {
     position: relative;
     width: 100%;
     height: 20px;
     text-align: center;
-    background-color: black;
+    background-color: #0f0f0f;
 }
 
 footer p {
@@ -419,3 +1107,43 @@ footer p {
 }
 
 /* Footer End  */
+/* Table Start */
+table {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    top: 135px;
+    right: 40px;
+    padding: 15px;
+    background-color: #858585;
+    border-radius: 10px;
+}
+
+table caption {
+    background-color: #858585;
+    width: fit-content;
+    padding: 5px 50px;
+    margin-inline: auto;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+table[class="active"] {
+    display: block;
+}
+
+table thead tr td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+table tbody tr td {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Table End */

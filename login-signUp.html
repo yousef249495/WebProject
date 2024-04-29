@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Adding Icon to tab's title -->
+    <link rel="icon" type="image/jpeg" href="imgs/logo.jpeg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header start -->
+
+    <header>
+        <div class="logo">
+            <a href="index.html" target="_self">
+                <img src="imgs/logo.jpeg" alt="car gear">
+            </a>
+        </div>
+        <div class="mainTitle">
+            <h1>gear hub</h1>
+        </div>
+    </header>
+
+    <!-- Header end -->
+    <!-- Login Start -->
+    <div class="loginPage">
+        <h2>Welcome to car's world</h2>
+        <img class="background" src="imgs/login1copy.jpg" alt="login background">
+        <form id="loginForm" action="index.html" method="get">
+            <div class="inputBox">
+                <input type="text" id="lusername" name="username" placeholder="Username">
+                <input type="password" id="lpassword" name="password" placeholder="Password">
+            </div>
+            <div class="reForgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button id="lbtn" type="submit" name="submit">login</button>
+            <p id="lerror"></p>
+        </form>
+
+        <button id="switch">Sign up</button>
+
+        <form id="signForm" action="index.html" method="get" class="dis">
+            <div class="inputBox">
+                <input type="text" id="susername" name="username" placeholder="Username">
+                <input type="password" id="spassword" name="password" placeholder="Password">
+                <input type="password" id="repassword" name="password" placeholder="Rewrite the password">
+            </div>
+            <button id="sbtn" type="submit" name="submit">Sign up</button>
+            <p id="serror"></p>
+        </form>
+
+    </div>
+    <!-- Login End  -->
+    <!-- Footer start -->
+    <footer>
+        <p>© 2024 GearHub. All rights reserved</p>
+    </footer>
+    <!-- Footer end -->
+    <script src="login-signUp.js"></script>
+</body>
+
+</html>
